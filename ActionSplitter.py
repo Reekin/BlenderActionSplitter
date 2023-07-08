@@ -4,6 +4,9 @@ import time
 # set split frame numbers here
 frame_splits = [100,250,384]
 
+# set your wanted base name
+base_name = "new_action"
+
 action = bpy.context.object.animation_data.action
 sorted_fcurves_info = []
 
@@ -22,7 +25,7 @@ offset = 0
 for i, frame_split in enumerate(frame_splits):
 
     #Create new action
-    new_action = bpy.data.actions.new(name=f"plw_LongSword_100_{i+1}")
+    new_action = bpy.data.actions.new(name=f"{base_name}_{i+1}")
     print(f"{new_action.name}")
 	
     #Copy key_points
